@@ -19,6 +19,9 @@
                 <ul id="links-container">
 
                     <li> <a href=" {{route('home')}} ">HOME</a> </li>
+
+                    <li> <a href=" {{route('comics.index')}} ">COMICS</a> </li>
+
                     @foreach($links as $link)
     
                     <li>

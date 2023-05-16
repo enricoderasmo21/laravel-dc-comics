@@ -140,6 +140,8 @@
     display: flex;
     justify-content: center;
 
+    min-height: 500px;
+
     background-color: #1c1c1c;
 
     color: white;
@@ -148,11 +150,13 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         gap: 50px;
 
         margin: 50px 0;
 
         .blue-btn{
+            height: 50px;
 
             a{
                 color: white;
@@ -160,12 +164,6 @@
         }
     }
 }
-
-
-
-
-
-
 
 // /Home--------------------
 
@@ -290,7 +288,7 @@
 
 
 // Links------------------
-#link-container{
+#show{
 
     #sep{
         height: 60px;
@@ -399,6 +397,51 @@
                 }
             }
         }
+    }
+
+    .bot-container{
+
+        background-color: #f6f6f6;
+
+        .inner-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 20px;
+
+            padding: 60px 0;
+
+            .container{
+
+                h3{
+                    color: #003f5e;
+                }
+
+                ._row{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .label{
+                        white-space: nowrap; 
+                    }
+
+                    .text{
+                        text-align: right;
+                        font-size: 0.8em;
+                    }
+                }
+
+            }
+
+            .left-container{
+                width: 50%;    
+            } 
+            
+            .right-container{
+                width: 40%;
+            }
+        }  
     }
 }
 

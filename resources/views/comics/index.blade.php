@@ -10,7 +10,7 @@
             <div id="cards-container">
                 @foreach($comics as $card)
                 
-                <a href="" class="card">
+                <a href="{{route('comics.show', $card->id)}}" class="card">
                     <img src="{{ $card->thumb }}" alt="">
                     <div class="title"> {{ strtoupper($card->title) }} </div>
                 </a>
