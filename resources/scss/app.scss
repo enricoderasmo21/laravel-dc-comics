@@ -134,11 +134,47 @@
 
 
 
+// Home-----------------------
+
+#home{
+    display: flex;
+    justify-content: center;
+
+    background-color: #1c1c1c;
+
+    color: white;
+
+    .home-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+
+        margin: 50px 0;
+
+        .blue-btn{
+
+            a{
+                color: white;
+            }
+        }
+    }
+}
 
 
 
 
-// Main---------------------
+
+
+
+// /Home--------------------
+
+
+
+
+
+
+// Index---------------------
 
 #main{
     
@@ -248,7 +284,7 @@
     }
 }
 
-// /Main---------------------
+// /Index---------------------
 
 
 
@@ -366,8 +402,7 @@
     }
 }
 
-// /Link-one------------------
-
+// /Links------------------
 
 
 
