@@ -1,6 +1,6 @@
 <?php 
 
-return  ["charachters", "comics", "movies", "tv", "games", "collectibles", "videos", "fans", "news", "shop"];
+return  ["home", "charachters", "comics", "movies", "tv", "games", "collectibles", "videos", "fans", "news", "shop"];
 
    
 
