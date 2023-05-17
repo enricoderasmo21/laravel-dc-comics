@@ -74,9 +74,12 @@
                     </div>
                     <hr>
                 </div>
-
-
             </div>
+        </div>
+        <div class="text-center">
+            <button class="blue-btn mb-3">
+                <a href="{{route('comics.edit', $comic->id)}}" class="text-light">MODIFICA</a>
+            </button>
         </div>
     </div>
 </div>
