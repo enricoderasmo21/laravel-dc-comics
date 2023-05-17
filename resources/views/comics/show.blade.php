@@ -76,10 +76,18 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
+        <div class="buttons-container">
+
             <button class="blue-btn mb-3">
                 <a href="{{route('comics.edit', $comic->id)}}" class="text-light">MODIFICA</a>
             </button>
+
+            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="red-btn mb-3" type="submit">RIMUOVI</button>
+            </form>
+
         </div>
     </div>
 </div>
