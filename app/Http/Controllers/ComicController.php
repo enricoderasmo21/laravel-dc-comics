@@ -15,12 +15,8 @@ class ComicController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        $links = config('comics_links');
-        $footerLinks = config('comics_footer_links');
-        $buyLinks = config('comics_buy_links');
-        $socialIconsList = config('comics_social_icons_list');
 
-        return view('comics/index', compact('comics', 'links', 'footerLinks', 'buyLinks', 'socialIconsList'));
+        return view('comics/index', compact('comics'));
     }
 
     /**
@@ -31,12 +27,8 @@ class ComicController extends Controller
     public function create()
     {
 
-        $links = config('comics_links');
-        $footerLinks = config('comics_footer_links');
-        $buyLinks = config('comics_buy_links');
-        $socialIconsList = config('comics_social_icons_list');$links = config('comics_links');
         
-        return view('comics/create', compact('links', 'footerLinks', 'buyLinks', 'socialIconsList'));
+        return view('comics/create');
     }
 
     /**
@@ -66,12 +58,8 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        $links = config('comics_links');
-        $footerLinks = config('comics_footer_links');
-        $buyLinks = config('comics_buy_links');
-        $socialIconsList = config('comics_social_icons_list');
 
-        return view('comics/show', compact('comic', 'links', 'footerLinks', 'buyLinks', 'socialIconsList'));
+        return view('comics/show', compact('comic'));
     }
 
     /**

@@ -24,13 +24,44 @@
 
                     <li> <a href=" {{route('comics.create')}} ">ADD</a> </li>
 
-                    @foreach($links as $link)
-    
                     <li>
-                        <a href="">{{ strtoupper($link) }}</a>
+                        <a href="">MOVIES</a>
                     </li>
     
-                    @endforeach
+                        
+                    <li>
+                        <a href="">TV</a>
+                    </li>
+    
+                        
+                    <li>
+                        <a href="">GAMES</a>
+                    </li>
+    
+                        
+                    <li>
+                        <a href="">COLLECTIBLES</a>
+                    </li>
+    
+                        
+                    <li>
+                        <a href="">VIDEOS</a>
+                    </li>
+    
+                        
+                    <li>
+                        <a href="">FANS</a>
+                    </li>
+    
+                        
+                    <li>
+                        <a href="">NEWS</a>
+                    </li>
+    
+                        
+                    <li>
+                        <a href="">SHOP</a>
+                    </li>
                 </ul>
             </div>
 
