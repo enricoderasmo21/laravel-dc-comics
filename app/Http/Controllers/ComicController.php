@@ -103,7 +103,10 @@ class ComicController extends Controller
 
     private function validation($request){
 
-        $request -> validate([
+        $formData = $request->all();
+
+        $validator = Validator::make($formData, [
+
             'title' => 'required|max:50|min:4',
             'description' => 'required|max:1000|min:10',
             'thumb' => 'required|active_url',
@@ -112,7 +115,40 @@ class ComicController extends Controller
             'sale_date' => 'required|date',
             'type' => 'required|max:20',
             'artists' => 'required|max:200',
-            'writers' => 'required|max:200'
-        ]);
+            'writers' => 'required|max:200' 
+        ], [
+            'title.required' => 'Devi inserire il titolo del fumetto!',
+            'title.max' => 'Non puoi inserire più di 50 caratteri!',
+            'title.min' => 'Devi inserire almeno 4 caratteri!',
+
+            'description.required' => 'Devi inserire la descrizione del fumetto!',
+            'description.max' => 'Non puoi inserire più di 1000 caratteri!',
+            'description.min' => 'Devi inserire almeno 10 caratteri!',
+
+            'thumb.required' => "Devi inserire il percorso dell'immagine del fumetto!",
+            'thumb.active_url' => "L'immagine deve avere un URL valido!",
+
+            'price.required' => 'Devi inserire il prezzo del fumetto!',
+            'price.max' => 'Non puoi inserire più di 10 caratteri!',
+            'price.min' => 'Devi inserire almeno 4 caratteri!',
+
+            'series.required' => 'Devi inserire la serie del fumetto!',
+            'series.max' => 'Non puoi inserire più di 50 caratteri!',
+
+            'sale_date.required' => 'Devi inserire la data del fumetto!',
+            'sale_date.date' => 'Questo campo deve contenere una data valida!',
+
+            'type.required' => 'Devi inserire il tipo di fumetto!',
+            'type.max' => 'Non puoi inserire più di 20 caratteri!',
+
+            'artists.required' => "Devi inserire l'artista/gli artisti del fumetto!",
+            'artists.max' => 'Non puoi inserire più di 200 caratteri!',
+
+            'writers.required' => "Devi inserire lo scrittore/gli scrittori del fumetto!",
+            'writers.max' => 'Non puoi inserire più di 200 caratteri!',
+
+        ])->validate(); 
+        
+        return $validator;
     }
 }
