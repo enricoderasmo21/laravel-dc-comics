@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -37,12 +38,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validation($request);
+
         $formData = $request->all();
-
         $newComic = new Comic();
-
         $newComic->fill($formData);
-
         $newComic->save();
 
         return redirect()->route('comics.show', $newComic->id);
@@ -80,12 +80,10 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $this->validation($request);
+        
         $formData = $request->all();
-
         $comic->update($formData);
-
-        $comic->save();
-
         return redirect()->route('comics.show', $comic->id);
     }
 
@@ -100,5 +98,21 @@ class ComicController extends Controller
         $comic->delete();
         
         return redirect()->route('comics.index');
+    }
+
+
+    private function validation($request){
+
+        $request -> validate([
+            'title' => 'required|max:50|min:4',
+            'description' => 'required|max:1000|min:10',
+            'thumb' => 'required|active_url',
+            'price' => 'required|max:10|min:4',
+            'series' => 'required|max:50',
+            'sale_date' => 'required|date',
+            'type' => 'required|max:20',
+            'artists' => 'required|max:200',
+            'writers' => 'required|max:200'
+        ]);
     }
 }

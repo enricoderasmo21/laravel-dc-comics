@@ -14,40 +14,104 @@
 
             <div class="mb-3">
               <label class="form-label text-light" for="title">Titolo</label>
-              <input type="text" class="form-control" id="title" name="title" value="{{$comic->title}}">
+              <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value='{{old('title') ?? $comic->title}}'>
+              
+              @error('title')
+              <div class="invalid-feedback">
+                {{$message}}
+              </div>
+              @enderror
             </div>
+
             <div class="mb-3">
-                <label class="form-label text-light" for="description">Descrizione</label>
-                <textarea type="text" class="form-control" id="description" name="description">{{$comic->description}}</textarea>
+              <label class="form-label text-light" for="description">Descrizione</label>
+              <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description"> {{old('desription') ?? $comic->description}} </textarea>
+              
+              @error('description')
+              <div class="invalid-feedback">
+                {{$message}}
               </div>
-              <div class="mb-3">
-                <label class="form-label text-light" for="thumb">Percorso immagine</label>
-                <input type="text" class="form-control" id="thumb" name="thumb" value="{{$comic->thumb}}">
+              @enderror 
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label text-light" for="thumb">Percorso immagine</label>
+              <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value='{{old('thumb') ?? $comic->thumb}}'>
+              
+              @error('thumb')
+              <div class="invalid-feedback">
+                {{$message}}
               </div>
-              <div class="mb-3">
-                <label class="form-label text-light" for="price">Prezzo</label>
-                <input type="text" class="form-control" id="price" name="price" value="{{$comic->price}}">
+              @enderror 
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label text-light" for="price">Prezzo</label>
+              <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value='{{old('price') ?? $comic->price}}'>
+              
+              @error('price')
+              <div class="invalid-feedback">
+                {{$message}}
               </div>
-              <div class="mb-3">
-                <label class="form-label text-light" for="series">Serie</label>
-                <input type="text" class="form-control" id="series" name="series" value="{{$comic->series}}">
+              @enderror 
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label text-light" for="series">Serie</label>
+              <input type="text" class="form-control @error('series') is-invalid @enderror" id="series" name="series" value='{{old('series') ?? $comic->series}}'>
+              
+              @error('series')
+              <div class="invalid-feedback">
+                {{$message}}
               </div>
-              <div class="mb-3">
-                <label class="form-label text-light" for="sale_date">Data di uscita</label>
-                <input type="text" class="form-control" id="sale_date" name="sale_date" value="{{$comic->sale_date}}">
+              @enderror 
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label text-light" for="sale_date">Data di uscita</label>
+              <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" value='{{old('sale_date') ?? $comic->sale_date}}'>
+              
+              @error('sale_date')
+              <div class="invalid-feedback">
+                {{$message}}
               </div>
+              @enderror 
+            </div>
+
             <div class="mb-3">
               <label class="form-label text-light" for="type">Tipo</label>
-              <input type="text" class="form-control" id="type" name="type" value="{{$comic->type}}">
-            </div>
-            <div class="mb-3">
-                <label class="form-label text-light" for="artists">Artisti</label>
-                <input type="text" class="form-control" id="artists" name="artists" value="{{$comic->artists}}">
+              <input type="text" class="form-control @error('type') is-invalid @enderror" id="type" name="type" value='{{old('type') ?? $comic->type}}'>
+              
+              @error('type')
+              <div class="invalid-feedback">
+                {{$message}}
               </div>
+              @enderror 
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label text-light" for="artists">Artisti</label>
+              <input type="text" class="form-control @error('artists') is-invalid @enderror" id="artists" name="artists" value='{{old('artists') ?? $comic->artists}}'>
+              
+              @error('artists')
+              <div class="invalid-feedback">
+                {{$message}}
+              </div>
+              @enderror 
+              </div>
+
               <div class="mb-3">
                 <label class="form-label text-light" for="writers">Scrittori</label>
-                <input type="text" class="form-control" id="writers" name="writers" value="{{$comic->writers}}">
+                <input type="text" class="form-control @error('writers') is-invalid @enderror" id="writers" name="writers" value='{{old('writers') ?? $comic->writers}}'>
+                
+                @error('writers')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+                @enderror 
               </div>
+
+            
             <button type="submit" class="btn btn-primary">MODIFICA</button>
         </form>
         
@@ -56,3 +120,4 @@
 
 
 @endsection
+
