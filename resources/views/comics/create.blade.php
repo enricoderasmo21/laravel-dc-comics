@@ -24,7 +24,7 @@
 
             <div class="mb-3">
               <label class="form-label text-light" for="description">Descrizione</label>
-              <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description" value='{{old('desription')}}'></textarea>
+              <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{old('desription')}}</textarea>
               
               @error('description')
               <div class="invalid-feedback">
@@ -68,7 +68,7 @@
 
             <div class="mb-3">
               <label class="form-label text-light" for="sale_date">Data di uscita</label>
-              <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" value='{{old('sale_date')}}'>
+              <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" placeholder="yyyy-mm-dd" name="sale_date" value='{{old('sale_date')}}'>
               
               @error('sale_date')
               <div class="invalid-feedback">

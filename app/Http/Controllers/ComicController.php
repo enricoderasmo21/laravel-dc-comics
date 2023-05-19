@@ -107,6 +107,8 @@ class ComicController extends Controller
 
         $validator = Validator::make($formData, [
 
+            // Qui va inserito l'array
+
             'title' => 'required|max:50|min:4',
             'description' => 'required|max:1000|min:10',
             'thumb' => 'required|active_url',
